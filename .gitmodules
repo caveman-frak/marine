@@ -1,0 +1,12 @@
+[submodule "test"]
+	path = test
+	url = git@github.com:caveman-frak/marine-test.git
+[submodule "wire"]
+	path = wire
+	url = git@github.com:caveman-frak/marine-wire.git
+[submodule "synthetic"]
+	path = synthetic
+	url = git@github.com:caveman-frak/marine-synthetic.git
+[submodule "loader"]
+	path = loader
+	url = git@github.com:caveman-frak/marine-loader.git
