@@ -10,3 +10,9 @@
 [submodule "loader"]
 	path = loader
 	url = git@github.com:caveman-frak/marine-loader.git
+[submodule "shared"]
+	path = shared
+	url = git@github.com:caveman-frak/marine-shared.git
+[submodule "geo"]
+	path = geo
+	url = git@github.com:caveman-frak/marine-geo.git
