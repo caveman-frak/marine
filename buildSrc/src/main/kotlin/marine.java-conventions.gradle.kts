@@ -8,8 +8,11 @@ group = "co.uk.bluegecko.marine"
 version = "1.0"
 
 java {
-    setSourceCompatibility(JavaVersion.VERSION_19)
-    setTargetCompatibility(JavaVersion.VERSION_19)
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(19))
+    }
+    sourceCompatibility = JavaVersion.VERSION_19
+    targetCompatibility = JavaVersion.VERSION_19
 }
 
 repositories {
