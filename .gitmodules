@@ -16,3 +16,4 @@
 [submodule "geo"]
 	path = geo
 	url = git@github.com:caveman-frak/marine-geo.git
+	branch = develop
