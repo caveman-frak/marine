@@ -29,3 +29,7 @@ hs_err_pid*
 build
 /.idea/
 /.env*
+
+# Ignore sample projects
+/sample-app/
+/sample-lib/
