@@ -17,3 +17,9 @@
 	path = geo
 	url = git@github.com:caveman-frak/marine-geo.git
 	branch = develop
+[submodule "vessel"]
+	path = vessel
+	url = ./vessel
+[submodule "tracker"]
+	path = tracker
+	url = ./tracker/
