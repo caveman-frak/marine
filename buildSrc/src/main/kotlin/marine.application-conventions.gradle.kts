@@ -13,7 +13,6 @@ testing {
     suites {
         configureEach {
             if (this is JvmTestSuite) {
-                useJUnitJupiter()
                 dependencies {
                     implementation(platform(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES))
                     implementation("org.springframework.boot:spring-boot-starter-test")
@@ -24,6 +23,13 @@ testing {
                     compileOnly("jakarta.persistence:jakarta.persistence-api")
                     compileOnly("com.fasterxml.jackson.core:jackson-annotations")
                 }
+            }
+        }
+
+        val integrationTest by registering(JvmTestSuite::class) {
+            useJUnitJupiter()
+            dependencies {
+                implementation(project())
             }
         }
     }

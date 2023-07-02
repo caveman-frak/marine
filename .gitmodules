@@ -1,18 +1,22 @@
 [submodule "test"]
 	path = test
 	url = git@github.com:caveman-frak/marine-test.git
+	branch = develop
 [submodule "wire"]
 	path = wire
 	url = git@github.com:caveman-frak/marine-wire.git
 [submodule "synthetic"]
 	path = synthetic
 	url = git@github.com:caveman-frak/marine-synthetic.git
+	branch = develop
 [submodule "loader"]
 	path = loader
 	url = git@github.com:caveman-frak/marine-loader.git
+	branch = develop
 [submodule "shared"]
 	path = shared
 	url = git@github.com:caveman-frak/marine-shared.git
+	branch = develop
 [submodule "geo"]
 	path = geo
 	url = git@github.com:caveman-frak/marine-geo.git
@@ -20,6 +24,8 @@
 [submodule "vessel"]
 	path = vessel
 	url = ./vessel
+	branch = develop
 [submodule "tracker"]
 	path = tracker
 	url = ./tracker/
+	branch = develop

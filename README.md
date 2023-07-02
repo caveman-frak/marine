@@ -2,7 +2,7 @@
 
 ### Marine Base Project
 
-Tracking vessels and predicting things.
+Tracking vessels and predicting things about them.
 
 ### Subprojects
 
@@ -12,5 +12,7 @@ Tracking vessels and predicting things.
 | [Test](./test/README.md)           | Test Library                                |
 | [Wire](./wire/README.md)           | Wire models (exposed by the API)            |
 | [Synthetic](./synthetic/README.md) | Various tools for generating synthetic data |
+| [Loader](./loader/README.md)       | Data Loader (from external sources)         |
 | [Geographic](./geo/README.md)      | Geographic services                         |
-| [Loader](./loader/README.md)       | Load data from external sources.            |
+| [Vessel](./vessel/README.md)       | Vessel Services                             |
+| [Tracker](./tracker/README.md)     | Tracker services                            |
