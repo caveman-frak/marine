@@ -10,6 +10,7 @@ version = "1.0"
 java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(19))
+        vendor.set(JvmVendorSpec.ORACLE)
     }
     sourceCompatibility = JavaVersion.VERSION_19
     targetCompatibility = JavaVersion.VERSION_19
