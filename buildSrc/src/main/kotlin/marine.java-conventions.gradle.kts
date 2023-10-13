@@ -2,6 +2,7 @@ plugins {
     id("java")
     id("jvm-test-suite")
     id("org.springframework.boot")
+    id("io.spring.dependency-management")
 }
 
 group = "co.uk.bluegecko.marine"
