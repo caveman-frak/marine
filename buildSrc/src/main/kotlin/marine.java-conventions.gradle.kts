@@ -3,6 +3,7 @@ plugins {
     id("jvm-test-suite")
     id("org.springframework.boot")
     id("io.spring.dependency-management")
+    id("idea")
 }
 
 group = "co.uk.bluegecko.marine"
@@ -19,6 +20,13 @@ java {
 
 repositories {
     mavenCentral()
+}
+
+idea {
+    module {
+        isDownloadJavadoc = true
+        isDownloadSources = true
+    }
 }
 
 dependencies {
