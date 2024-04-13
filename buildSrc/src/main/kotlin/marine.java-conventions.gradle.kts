@@ -1,6 +1,7 @@
 plugins {
     id("java")
     id("jvm-test-suite")
+    id("java-test-fixtures")
     id("org.springframework.boot")
     id("io.spring.dependency-management")
     id("idea")
@@ -32,9 +33,12 @@ idea {
 dependencies {
     implementation(platform(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES))
     implementation("org.springframework.boot:spring-boot-starter")
-    compileOnly("org.projectlombok:lombok:1.18.26")
-    annotationProcessor("org.projectlombok:lombok:1.18.26")
+    compileOnly("org.projectlombok:lombok")
+    annotationProcessor("org.projectlombok:lombok:")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testCompileOnly("org.projectlombok:lombok:1.18.26")
-    testAnnotationProcessor("org.projectlombok:lombok:1.18.26")
+    testCompileOnly("org.projectlombok:lombok")
+    testAnnotationProcessor("org.projectlombok:lombok")
+    testFixturesCompileOnly("org.projectlombok:lombok")
+    testFixturesAnnotationProcessor("org.projectlombok:lombok")
+    implementation("org.mapstruct:mapstruct:1.6.0.Beta1")
 }
