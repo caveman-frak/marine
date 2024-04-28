@@ -35,3 +35,4 @@ tmp/**
 # Ignore sample projects
 /sample-app/
 /sample-lib/
+.tailwind-binaries/

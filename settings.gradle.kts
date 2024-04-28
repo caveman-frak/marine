@@ -8,5 +8,26 @@
  * This project uses @Incubating APIs which are subject to change.
  */
 
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+    }
+}
+
+dependencyResolutionManagement {
+    versionCatalogs {
+        create("libs") {
+            val groovy = version("groovy", "3.0.21")
+            library("groovy-core", "org.codehaus.groovy", "groovy").versionRef(groovy)
+            library("groovy-json", "org.codehaus.groovy", "groovy-json").versionRef(groovy)
+            library("groovy-nio", "org.codehaus.groovy", "groovy-nio").versionRef(groovy)
+            bundle("groovy", listOf("groovy-core", "groovy-json", "groovy-nio"))
+            plugin("download", "de.undercouch.download").version("5.6.0")
+            plugin("testLogger", "com.adarshr.test-logger").version("4.0.0")
+        }
+    }
+}
+
 rootProject.name = "marine"
 include("shared", "wire", "test", "synthetic", "geo", "loader", "vessel", "tracker", "config", "alert")

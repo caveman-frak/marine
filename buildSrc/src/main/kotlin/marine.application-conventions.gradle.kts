@@ -4,6 +4,8 @@ plugins {
 }
 
 dependencies {
+    implementation("org.springframework.boot:spring-boot-starter-json")
+    implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
@@ -11,32 +13,42 @@ dependencies {
     implementation("org.projectlombok:lombok-mapstruct-binding:0.2.0")
     annotationProcessor("org.mapstruct:mapstruct-processor:1.6.0.Beta1")
     implementation("org.springframework.boot:spring-boot-devtools")
+    runtimeOnly("org.liquibase:liquibase-core")
+    runtimeOnly("com.h2database:h2")
 }
 
 testing {
     suites {
-        configureEach {
-            if (this is JvmTestSuite) {
-                dependencies {
-                    implementation(platform(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES))
-                    implementation("org.springframework.boot:spring-boot-starter-test")
-                    compileOnly("org.projectlombok:lombok:1.18.26")
-                    annotationProcessor("org.projectlombok:lombok:1.18.26")
-                    compileOnly("org.springframework:spring-web")
-                    compileOnly("org.springframework.data:spring-data-jpa")
-                    compileOnly("jakarta.persistence:jakarta.persistence-api")
-                    compileOnly("com.fasterxml.jackson.core:jackson-annotations")
-                }
-            }
-        }
+        val test by getting(JvmTestSuite::class)
 
-        val integrationTest by registering(JvmTestSuite::class) {
+        register<JvmTestSuite>("integrationTest") {
             useJUnitJupiter()
             dependencies {
                 implementation(project())
                 implementation(testFixtures(project()))
+                compileOnly("org.springframework:spring-web")
+                compileOnly("org.springframework.data:spring-data-jpa")
+                compileOnly("jakarta.persistence:jakarta.persistence-api")
+                compileOnly("com.fasterxml.jackson.core:jackson-annotations")
+                runtimeOnly("org.liquibase:liquibase-core")
+                runtimeOnly("com.h2database:h2")
+            }
 
+            targets {
+                all {
+                    testTask.configure {
+                        shouldRunAfter(test)
+                    }
+                }
             }
         }
     }
+}
+
+tasks.named("check") {
+    dependsOn(testing.suites.named("integrationTest"))
+}
+
+springBoot {
+    buildInfo()
 }
