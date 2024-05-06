@@ -1,3 +1,6 @@
+import gradle.kotlin.dsl.accessors._8b8a1d949e5064028a324276e9a2141b.annotationProcessor
+import gradle.kotlin.dsl.accessors._8b8a1d949e5064028a324276e9a2141b.implementation
+
 plugins {
     id("java")
     id("jvm-test-suite")
@@ -6,6 +9,7 @@ plugins {
     id("io.spring.dependency-management")
     id("io.freefair.lombok")
     id("idea")
+    id("com.adarshr.test-logger")
 }
 
 group = "co.uk.bluegecko.marine"
@@ -35,8 +39,11 @@ idea {
 dependencies {
     implementation(platform(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES))
     implementation("org.springframework.boot:spring-boot-starter")
+    implementation("org.springframework.boot:spring-boot-starter-json")
+    implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.mapstruct:mapstruct:1.6.0.Beta1")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    implementation("org.projectlombok:lombok-mapstruct-binding:0.2.0")
+    annotationProcessor("org.mapstruct:mapstruct-processor:1.6.0.Beta1")
 }
 
 testing {
