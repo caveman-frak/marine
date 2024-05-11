@@ -1,6 +1,9 @@
 import de.undercouch.gradle.tasks.download.Download
 import de.undercouch.gradle.tasks.download.Verify
 import org.gradle.nativeplatform.platform.internal.DefaultNativePlatform
+import java.nio.file.Files
+import java.nio.file.Paths
+import java.nio.file.attribute.PosixFilePermission
 
 plugins {
     de.undercouch.download
@@ -16,7 +19,7 @@ class Tailwind {
     }
 
     fun dir(): String {
-        return project.projectDir.absolutePath
+        return rootProject.projectDir.absolutePath
     }
 
     fun path(): String {
@@ -64,22 +67,31 @@ tasks {
     val tailwindCliExecutable by registering {
         description = "Ensure Tailwind CLI is executable"
         dependsOn(tailwindCliVerify)
-        File(tailwind.path()).setExecutable(true)
+        val perms = setOf(
+            PosixFilePermission.OWNER_READ, PosixFilePermission.OWNER_WRITE, PosixFilePermission.OWNER_EXECUTE
+        )
+        if (Files.exists(Paths.get(tailwind.path()))) {
+            Files.setPosixFilePermissions(Paths.get(tailwind.path()), perms)
+        }
     }
     val watchCss by registering(Exec::class) {
         description = "Watch CSS Files"
         dependsOn(tailwindCliExecutable)
         commandLine(
-            tailwind.path(), "--watch=always", "-i", "src/main/resources/styles/build.css", "-o",
-            "src/main/resources/styles/main.css"
+            tailwind.path(), "--watch=always",
+            "-c", "src/main/resources/tailwind/tailwind.config.js",
+            "-i", "src/main/resources/styles/input.css",
+            "-o", "src/main/resources/static/styles/output.css"
         )
     }
     val buildCss by registering(Exec::class) {
         description = "Build CSS files with Tailwind"
         dependsOn(tailwindCliExecutable)
         commandLine(
-            tailwind.path(), "-i", "src/main/resources/styles/build.css", "-o",
-            "src/main/resources/styles/main.css"
+            tailwind.path(),
+            "-c", "src/main/resources/tailwind/tailwind.config.js",
+            "-i", "src/main/resources/styles/input.css",
+            "-o", "src/main/resources/static/styles/output.css"
         )
     }
 }
