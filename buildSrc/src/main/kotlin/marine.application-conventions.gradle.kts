@@ -44,6 +44,11 @@ testing {
 tasks.named("check") {
     dependsOn(testing.suites.named("integrationTest"))
 }
+tasks.named<ProcessResources>("processResources") {
+    filesMatching("application.*") {
+        expand(project.properties)
+    }
+}
 
 springBoot {
     buildInfo()
