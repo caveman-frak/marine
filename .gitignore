@@ -36,3 +36,4 @@ tmp/**
 /sample-app/
 /sample-lib/
 /.tailwindcss-binaries/
+/application.*
