@@ -1,7 +1,3 @@
-import gradle.kotlin.dsl.accessors._8b8a1d949e5064028a324276e9a2141b.annotationProcessor
-import gradle.kotlin.dsl.accessors._8b8a1d949e5064028a324276e9a2141b.implementation
-import gradle.kotlin.dsl.accessors._8b8a1d949e5064028a324276e9a2141b.testFixturesImplementation
-
 plugins {
     id("java")
     id("jvm-test-suite")
@@ -65,4 +61,8 @@ testing {
 
         val test by getting(JvmTestSuite::class)
     }
+}
+
+tasks.withType<AbstractCopyTask> {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }

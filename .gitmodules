@@ -5,6 +5,7 @@
 [submodule "wire"]
 	path = wire
 	url = git@github.com:caveman-frak/marine-wire.git
+	branch = develop
 [submodule "synthetic"]
 	path = synthetic
 	url = git@github.com:caveman-frak/marine-synthetic.git
@@ -23,15 +24,17 @@
 	branch = develop
 [submodule "vessel"]
 	path = vessel
-	url = ./vessel
+	url = git@github.com:caveman-frak/marine-vessel.git
 	branch = develop
 [submodule "tracker"]
 	path = tracker
-	url = ./tracker/
+	url = git@github.com:caveman-frak/marine-tracker.git
 	branch = develop
 [submodule "alert"]
 	path = alert
-	url = ./alert/
+	url = git@github.com:caveman-frak/marine-alert.git
+	branch = develop
 [submodule "config"]
 	path = config
-	url = ./config/
+	url = git@github.com:caveman-frak/marine-config.git
+	branch = develop

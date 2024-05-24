@@ -23,8 +23,17 @@ dependencyResolutionManagement {
             library("groovy-json", "org.codehaus.groovy", "groovy-json").versionRef(groovy)
             library("groovy-nio", "org.codehaus.groovy", "groovy-nio").versionRef(groovy)
             bundle("groovy", listOf("groovy-core", "groovy-json", "groovy-nio"))
+            val jooq = version("groovy", "3.19.8")
+            library("jooq", "org.jooq", "jooq").versionRef(jooq)
+            library("jooq-meta", "org.jooq", "jooq-meta").versionRef(jooq)
+            library("jooq-ext", "org.jooq", "jooq-meta-extensions").versionRef(jooq)
+            bundle("jooq-bundle", listOf("jooq", "jooq-meta", "jooq-ext"))
+            library("jooq-liquibase", "org.jooq", "jooq-meta-extensions-liquibase").versionRef(jooq)
+
             plugin("download", "de.undercouch.download").version("5.6.0")
             plugin("testLogger", "com.adarshr.test-logger").version("4.0.0")
+            plugin("jooq", "org.jooq:jooq-codegen-gradle").versionRef(jooq)
+
         }
     }
 }

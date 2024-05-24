@@ -16,3 +16,4 @@ Tracking vessels and predicting things about them.
 | [Geographic](./geo/README.md)      | Geographic services                         |
 | [Vessel](./vessel/README.md)       | Vessel Services                             |
 | [Tracker](./tracker/README.md)     | Tracker services                            |
+| [Alert](./alert/README.md)         | Alert services                              |
