@@ -43,6 +43,7 @@ dependencies {
     implementation("org.mapstruct:mapstruct:1.6.0.Beta1")
     implementation("org.projectlombok:lombok-mapstruct-binding:0.2.0")
     annotationProcessor("org.mapstruct:mapstruct-processor:1.6.0.Beta1")
+    testFixturesImplementation("org.springframework.boot:spring-boot-starter-test")
     testFixturesImplementation("org.instancio:instancio-junit:4.6.0")
 }
 
