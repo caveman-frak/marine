@@ -12,8 +12,17 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-devtools")
     runtimeOnly("org.liquibase:liquibase-core")
     runtimeOnly("com.h2database:h2")
+    implementation("org.jooq:jooq:3.19.8")
+    implementation("org.jooq:jooq-meta:3.19.8")
     implementation("org.jooq:jooq-meta-extensions:3.19.8")
-    jooqCodegen("org.jooq:jooq-meta-extensions-liquibase:3.19.8")
+//    jooqCodegen("org.jooq:jooq-meta-extensions-liquibase:3.19.8")
+//    jooqCodegen("org.liquibase:liquibase-core")
+    jooqCodegen("org.jooq:jooq-meta-extensions-hibernate:3.19.8")
+    jooqCodegen("org.jooq:jooq-meta-extensions:3.19.8")
+//    jooqCodegen("org.hibernate.orm:hibernate-core")
+//    jooqCodegen("org.slf4j:slf4j-jdk14")
+//    jooqCodegen("org.apache.maven:maven-settings-builder")
+
 }
 
 testing {
