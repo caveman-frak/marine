@@ -14,7 +14,7 @@ dependencies {
     runtimeOnly("org.liquibase:liquibase-core")
     runtimeOnly("com.h2database:h2")
     implementation("com.querydsl:querydsl-core:5.1.0")
-    implementation("com.querydsl:querydsl-jpa-spring:5.1.0")
+    implementation("com.querydsl:querydsl-jpa:5.1.0")
     annotationProcessor("com.querydsl:querydsl-apt:5.1.0:jakarta")
     annotationProcessor("jakarta.persistence:jakarta.persistence-api")
 }
