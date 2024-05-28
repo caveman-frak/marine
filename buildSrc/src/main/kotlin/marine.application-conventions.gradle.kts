@@ -1,7 +1,8 @@
+@file:Suppress("UnstableApiUsage")
+
 plugins {
     id("marine.java-conventions")
     id("application")
-    id("org.jooq.jooq-codegen-gradle")
 }
 
 dependencies {
@@ -12,8 +13,10 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-devtools")
     runtimeOnly("org.liquibase:liquibase-core")
     runtimeOnly("com.h2database:h2")
-    implementation("org.jooq:jooq-meta-extensions:3.19.8")
-    jooqCodegen("org.jooq:jooq-meta-extensions-liquibase:3.19.8")
+    implementation("com.querydsl:querydsl-core:5.1.0")
+    implementation("com.querydsl:querydsl-jpa-spring:5.1.0")
+    annotationProcessor("com.querydsl:querydsl-apt:5.1.0:jakarta")
+    annotationProcessor("jakarta.persistence:jakarta.persistence-api")
 }
 
 testing {

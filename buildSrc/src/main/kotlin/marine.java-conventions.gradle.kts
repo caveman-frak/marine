@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 plugins {
     id("java")
     id("jvm-test-suite")
@@ -66,4 +68,11 @@ testing {
 
 tasks.withType<AbstractCopyTask> {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+tasks.withType<Test>().configureEach {
+    if (!project.hasProperty("createReports")) {
+        reports.html.required = false
+        reports.junitXml.required = false
+    }
 }
