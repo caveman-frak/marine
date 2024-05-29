@@ -41,6 +41,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-json")
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-aop")
+    implementation("net.logstash.logback:logstash-logback-encoder:7.4")
     implementation("org.apache.commons:commons-text:1.12.0")
     implementation("org.mapstruct:mapstruct:1.6.0.Beta1")
     implementation("org.projectlombok:lombok-mapstruct-binding:0.2.0")
