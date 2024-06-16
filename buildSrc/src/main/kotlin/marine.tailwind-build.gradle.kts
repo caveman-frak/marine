@@ -56,6 +56,7 @@ tasks {
         src(tailwind.url())
         dest(tailwind.path())
         overwrite(false)
+        onlyIfNewer(true)
     }
     val tailwindCliVerify by registering(Verify::class) {
         description = "Verfify Tailwind CLI"

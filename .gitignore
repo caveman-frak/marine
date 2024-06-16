@@ -30,10 +30,16 @@ build
 out
 tmp/**
 /.idea/
-/.env*
 
 # Ignore sample projects
 /sample-app/
 /sample-lib/
+
+# Ignore downloaded jars
 /.tailwindcss-binaries/
+/.otel-agent/
+
+# Ignore env files and application created files
 /application.*
+/env/
+/.env*
