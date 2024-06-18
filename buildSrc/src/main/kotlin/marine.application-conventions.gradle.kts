@@ -6,13 +6,13 @@ plugins {
     id("marine.java-conventions")
     id("application")
     id("de.undercouch.download")
+    id("com.gorylenko.gradle-git-properties")
 }
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
-    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0")
     implementation("org.springframework.boot:spring-boot-devtools")
     runtimeOnly("org.liquibase:liquibase-core")
     runtimeOnly("com.h2database:h2")
@@ -95,5 +95,7 @@ tasks.withType<JavaExec> {
 }
 
 springBoot {
-    buildInfo()
+    buildInfo {
+        excludes.set(setOf("time"))
+    }
 }
