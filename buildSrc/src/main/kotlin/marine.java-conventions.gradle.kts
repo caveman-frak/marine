@@ -84,3 +84,8 @@ tasks.withType<Test>().configureEach {
         reports.junitXml.required = false
     }
 }
+tasks.named<ProcessResources>("processResources") {
+    filesMatching("*application*.yaml") {
+        expand(project.properties)
+    }
+}

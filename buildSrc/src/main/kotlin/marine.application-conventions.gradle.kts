@@ -88,11 +88,6 @@ tasks {
 tasks.named("check") {
     dependsOn(testing.suites.named("integrationTest"))
 }
-tasks.named<ProcessResources>("processResources") {
-    filesMatching("application.*") {
-        expand(project.properties)
-    }
-}
 tasks.withType<JavaExec> {
     dependsOn("downloadOtelAgent")
     jvmArgs(setOf("-javaagent:${otelAgent.path()}"))
