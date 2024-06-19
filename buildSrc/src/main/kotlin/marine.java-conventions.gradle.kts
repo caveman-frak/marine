@@ -1,5 +1,8 @@
 @file:Suppress("UnstableApiUsage")
 
+import gradle.kotlin.dsl.accessors._ab5ff91296fea976f80b6515003eeb14.implementation
+
+
 plugins {
     id("java")
     id("jvm-test-suite")
@@ -41,6 +44,8 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-json")
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-aop")
+    implementation("org.springframework.data:spring-data-jpa")
+    implementation("org.hibernate.orm:hibernate-core")
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0")
     implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-xml")
     implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-protobuf")
