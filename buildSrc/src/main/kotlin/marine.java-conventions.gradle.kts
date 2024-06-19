@@ -52,9 +52,9 @@ dependencies {
     implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-cbor")
     implementation("net.logstash.logback:logstash-logback-encoder:7.4")
     implementation("org.apache.commons:commons-text:1.12.0")
-    implementation("org.mapstruct:mapstruct:1.6.0.Beta1")
+    implementation("org.mapstruct:mapstruct:1.6.0.Beta2")
     implementation("org.projectlombok:lombok-mapstruct-binding:0.2.0")
-    annotationProcessor("org.mapstruct:mapstruct-processor:1.6.0.Beta1")
+    annotationProcessor("org.mapstruct:mapstruct-processor:1.6.0.Beta2")
     testFixturesImplementation("org.springframework.boot:spring-boot-starter-test")
     testFixturesImplementation("org.instancio:instancio-junit:4.6.0")
 }
