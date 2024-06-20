@@ -24,6 +24,8 @@ dependencies {
         exclude("io.opentelemetry", "opentelemetry-api-incubator")
     }
     runtimeOnly("io.opentelemetry:opentelemetry-api-incubator:1.37.0-alpha")
+    runtimeOnly("org.webjars:webjars-locator-core")
+    runtimeOnly("org.webjars.npm:htmx.org:2.0.0-beta4")
 }
 
 testing {
