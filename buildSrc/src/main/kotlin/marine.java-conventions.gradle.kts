@@ -64,6 +64,7 @@ testing {
         val applySpringTest = { suite: JvmTestSuite ->
             suite.dependencies {
                 implementation("org.springframework.boot:spring-boot-starter-test")
+                implementation("org.awaitility:awaitility")
                 implementation("uk.org.webcompere:model-assert:1.0.0")
                 implementation("net.javacrumbs.json-unit:json-unit-assertj:3.2.7")
                 implementation("org.xmlunit:xmlunit-assertj3:2.10.0")
