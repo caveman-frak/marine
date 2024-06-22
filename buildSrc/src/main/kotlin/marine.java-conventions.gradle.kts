@@ -1,8 +1,5 @@
 @file:Suppress("UnstableApiUsage")
 
-import gradle.kotlin.dsl.accessors._ab5ff91296fea976f80b6515003eeb14.implementation
-
-
 plugins {
     id("java")
     id("jvm-test-suite")
@@ -69,6 +66,8 @@ testing {
                 implementation("net.javacrumbs.json-unit:json-unit-assertj:3.2.7")
                 implementation("org.xmlunit:xmlunit-assertj3:2.10.0")
                 implementation("com.google.jimfs:jimfs:1.0")
+                implementation("com.github.valfirst:slf4j-test:3.0.1")
+                implementation("com.github.stefanbirkner:system-lambda:1.2.1")
             }
         }
 
