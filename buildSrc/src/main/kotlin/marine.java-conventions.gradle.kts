@@ -54,6 +54,8 @@ dependencies {
     annotationProcessor("org.mapstruct:mapstruct-processor:1.6.0.Beta2")
     testFixturesImplementation("org.springframework.boot:spring-boot-starter-test")
     testFixturesImplementation("org.instancio:instancio-junit:4.6.0")
+    testFixturesImplementation("net.datafaker:datafaker:2.2.2")
+    implementation("com.github.spotbugs:spotbugs-annotations:4.8.6")
 }
 
 testing {
@@ -61,13 +63,18 @@ testing {
         val applySpringTest = { suite: JvmTestSuite ->
             suite.dependencies {
                 implementation("org.springframework.boot:spring-boot-starter-test")
+                implementation("org.junit-pioneer:junit-pioneer:2.2.0")
                 implementation("org.awaitility:awaitility")
                 implementation("uk.org.webcompere:model-assert:1.0.0")
                 implementation("net.javacrumbs.json-unit:json-unit-assertj:3.2.7")
                 implementation("org.xmlunit:xmlunit-assertj3:2.10.0")
                 implementation("com.google.jimfs:jimfs:1.0")
-                implementation("com.github.valfirst:slf4j-test:3.0.1")
                 implementation("com.github.stefanbirkner:system-lambda:1.2.1")
+                implementation("net.jqwik:jqwik:1.9.0")
+                implementation("com.github.valfirst:slf4j-test:3.0.1")
+                configurations.all {
+                    exclude("ch.qos.logback", "logback-classic")
+                }
             }
         }
 
@@ -89,6 +96,9 @@ tasks.withType<Test>().configureEach {
         reports.html.required = false
         reports.junitXml.required = false
     }
+}
+tasks.withType<Test> {
+    jvmArgs(setOf("-XX:+EnableDynamicAgentLoading"))
 }
 tasks.named<ProcessResources>("processResources") {
     filesMatching("*application*.yaml") {
