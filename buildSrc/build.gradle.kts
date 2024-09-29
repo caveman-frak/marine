@@ -17,5 +17,4 @@ dependencies {
     implementation("de.undercouch:gradle-download-task:5.6.0")
     implementation("com.adarshr:gradle-test-logger-plugin:4.0.0")
     implementation("com.gorylenko.gradle-git-properties:gradle-git-properties:2.4.1")
-
 }

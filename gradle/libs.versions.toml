@@ -1,0 +1,14 @@
+[versions]
+download = "5.6.0"
+groovy = "3.0.21"
+
+[libraries]
+groovy-core = { group = "org.codehaus.groovy", name = "groovy", version.ref = "groovy" }
+groovy-json = { group = "org.codehaus.groovy", name = "groovy-json", version.ref = "groovy" }
+groovy-nio = { group = "org.codehaus.groovy", name = "groovy-nio", version.ref = "groovy" }
+
+[bundles]
+groovy = ["groovy-core", "groovy-json", "groovy-nio"]
+
+[plugins]
+download = { id = "de.undercouch.download", version.ref = "download" }

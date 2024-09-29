@@ -58,6 +58,7 @@ dependencies {
     testFixturesImplementation("org.instancio:instancio-junit:4.6.0")
     testFixturesImplementation("net.datafaker:datafaker:2.2.2")
     implementation("com.github.spotbugs:spotbugs-annotations:4.8.6")
+    testImplementation("com.github.valfirst:slf4j-test:3.0.1")
 }
 
 testing {
@@ -74,10 +75,6 @@ testing {
                 implementation("com.google.jimfs:jimfs:1.0")
                 implementation("com.github.stefanbirkner:system-lambda:1.2.1")
                 implementation("net.jqwik:jqwik:1.9.0")
-                implementation("com.github.valfirst:slf4j-test:3.0.1")
-                configurations.all {
-                    exclude("ch.qos.logback", "logback-classic")
-                }
             }
         }
 
@@ -95,14 +92,14 @@ tasks.withType<AbstractCopyTask> {
 }
 
 tasks.withType<Test>().configureEach {
+    exclude("ch.qos.logback", "logback-classic")
     if (!project.hasProperty("createReports")) {
         reports.html.required = false
         reports.junitXml.required = false
     }
-}
-tasks.withType<Test> {
     jvmArgs(setOf("-XX:+EnableDynamicAgentLoading"))
 }
+
 tasks.named<ProcessResources>("processResources") {
     filesMatching("*application*.yaml") {
         expand(project.properties)
