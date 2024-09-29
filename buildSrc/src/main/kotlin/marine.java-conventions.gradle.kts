@@ -98,11 +98,19 @@ tasks.withType<Test>().configureEach {
         reports.html.required = false
         reports.junitXml.required = false
     }
-    jvmArgs(setOf("-XX:+EnableDynamicAgentLoading"))
+    jvmArgs(setOf("--enable-preview", "-XX:+EnableDynamicAgentLoading"))
 }
 
 tasks.named<ProcessResources>("processResources") {
     filesMatching("*application*.yaml") {
         expand(project.properties)
     }
+}
+
+tasks.withType<JavaCompile>().configureEach {
+    options.compilerArgs.add("--enable-preview")
+}
+
+tasks.withType<JavaExec>().configureEach {
+    jvmArgs("--enable-preview")
 }
