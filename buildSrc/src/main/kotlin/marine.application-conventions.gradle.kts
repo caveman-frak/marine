@@ -21,8 +21,10 @@ dependencies {
     annotationProcessor("com.querydsl:querydsl-apt:5.1.0:jakarta")
     annotationProcessor("jakarta.persistence:jakarta.persistence-api")
     implementation("io.opentelemetry.instrumentation:opentelemetry-spring-boot-starter")
+    implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+    implementation("io.github.wimdeblauwe:htmx-spring-boot-thymeleaf:3.5.1")
     runtimeOnly("org.webjars:webjars-locator-core")
-    runtimeOnly("org.webjars.npm:htmx.org:2.0.0-beta4")
+    runtimeOnly("org.webjars.npm:htmx.org:2.0.2")
 }
 
 testing {
@@ -40,7 +42,7 @@ testing {
                 compileOnly("com.fasterxml.jackson.core:jackson-annotations")
                 runtimeOnly("org.liquibase:liquibase-core")
                 runtimeOnly("com.h2database:h2")
-                implementation("org.seleniumhq.selenium:htmlunit3-driver:4.21.0")
+                implementation("org.seleniumhq.selenium:htmlunit3-driver:4.23.0")
             }
 
             targets {
