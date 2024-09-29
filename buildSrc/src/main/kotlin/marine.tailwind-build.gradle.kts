@@ -34,19 +34,19 @@ class Tailwind {
 var os: OperatingSystem = DefaultNativePlatform.getCurrentOperatingSystem()
 
 val tailwind = Tailwind().apply {
-    version = "3.4.3"
+    version = "3.4.13"
 
     if (os.isMacOsX) {
         binary = "tailwindcss-macos-x64"
-        checksum = "bd56c3beedd1eba030099820ef9935323a76a15b2b91d317b6a1c0e6c740084a"
+        checksum = "3c4423494d8204b37455cb77b1b85ef5c6c42413f58e1516a4bf7528531c067d"
     }
     if (os.isLinux) {
         binary = "tailwindcss-linux-x64"
-        checksum = "bd7be1b5f1ddfcf8383efe97db763d9c2d4e1547a3bb9bc19fd48439a2391ba1"
+        checksum = "c91ccc8642f79d7db5538e8d686a4dc18e00a93180f5377208a9a93c7efb9b6a"
     }
     if (os.isWindows) {
         binary = "tailwindcss-windows-x64.exe"
-        checksum = "32d8a1e2970977e8449600f0c4f8d07bee8ba492c83800cb786e918b0596c0d1"
+        checksum = "76d7a37764c172bd25f9eb2b76d46099cca642f84c8dda10891a536018ab1511"
     }
 }
 

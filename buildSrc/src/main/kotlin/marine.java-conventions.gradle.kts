@@ -5,7 +5,6 @@ plugins {
     id("jvm-test-suite")
     id("java-test-fixtures")
     id("org.springframework.boot")
-    id("io.spring.dependency-management")
     id("io.freefair.lombok")
     id("idea")
     id("com.adarshr.test-logger")
@@ -17,11 +16,11 @@ description = "Marine Tracking System"
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(21))
+        languageVersion.set(JavaLanguageVersion.of(22))
         vendor.set(JvmVendorSpec.ORACLE)
     }
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
+    sourceCompatibility = JavaVersion.VERSION_22
+    targetCompatibility = JavaVersion.VERSION_22
 }
 
 repositories {
@@ -37,6 +36,9 @@ idea {
 
 dependencies {
     implementation(platform(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES))
+    implementation(platform("io.opentelemetry.instrumentation:opentelemetry-instrumentation-bom:2.8.0"))
+    testFixturesImplementation(platform(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES))
+    annotationProcessor(platform(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES))
     implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.springframework.boot:spring-boot-starter-json")
     implementation("org.springframework.boot:spring-boot-starter-validation")
@@ -62,6 +64,7 @@ testing {
     suites {
         val applySpringTest = { suite: JvmTestSuite ->
             suite.dependencies {
+                implementation(platform(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES))
                 implementation("org.springframework.boot:spring-boot-starter-test")
                 implementation("org.junit-pioneer:junit-pioneer:2.2.0")
                 implementation("org.awaitility:awaitility")

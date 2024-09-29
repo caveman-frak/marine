@@ -20,10 +20,7 @@ dependencies {
     implementation("com.querydsl:querydsl-jpa:5.1.0")
     annotationProcessor("com.querydsl:querydsl-apt:5.1.0:jakarta")
     annotationProcessor("jakarta.persistence:jakarta.persistence-api")
-    implementation("io.opentelemetry.instrumentation:opentelemetry-spring-boot-starter:2.4.0-alpha") {
-        exclude("io.opentelemetry", "opentelemetry-api-incubator")
-    }
-    runtimeOnly("io.opentelemetry:opentelemetry-api-incubator:1.37.0-alpha")
+    implementation("io.opentelemetry.instrumentation:opentelemetry-spring-boot-starter")
     runtimeOnly("org.webjars:webjars-locator-core")
     runtimeOnly("org.webjars.npm:htmx.org:2.0.0-beta4")
 }
@@ -91,9 +88,10 @@ tasks.named("check") {
     dependsOn(testing.suites.named("integrationTest"))
 }
 tasks.withType<JavaExec> {
-    dependsOn("downloadOtelAgent")
-    jvmArgs(setOf("-javaagent:${otelAgent.path()}"))
-    systemProperty("otel.experimental.config.file", "../env/otel-config.yaml")
+// --- disabled open telemetry java agent ---
+//    dependsOn("downloadOtelAgent")
+//    jvmArgs(setOf("-javaagent:${otelAgent.path()}"))
+//    systemProperty("otel.experimental.config.file", "../env/otel-config.yaml")
 }
 
 springBoot {
