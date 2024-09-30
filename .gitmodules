@@ -1,7 +1,3 @@
-[submodule "test"]
-	path = test
-	url = git@github.com:caveman-frak/marine-test.git
-	branch = develop
 [submodule "wire"]
 	path = wire
 	url = git@github.com:caveman-frak/marine-wire.git
