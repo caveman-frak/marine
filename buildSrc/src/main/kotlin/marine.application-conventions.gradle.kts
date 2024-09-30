@@ -10,39 +10,45 @@ plugins {
 }
 
 dependencies {
+    implementation(project(":shared"))
+    implementation(project(":wire"))
+    testFixturesImplementation(testFixtures(project(":shared")))
+    testFixturesImplementation(testFixtures(project(":wire")))
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-devtools")
+    implementation("io.opentelemetry.instrumentation:opentelemetry-spring-boot-starter")
     runtimeOnly("org.liquibase:liquibase-core")
     runtimeOnly("com.h2database:h2")
     implementation("com.querydsl:querydsl-core:5.1.0")
     implementation("com.querydsl:querydsl-jpa:5.1.0")
     annotationProcessor("com.querydsl:querydsl-apt:5.1.0:jakarta")
     annotationProcessor("jakarta.persistence:jakarta.persistence-api")
-    implementation("io.opentelemetry.instrumentation:opentelemetry-spring-boot-starter")
-    implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
-    implementation("io.github.wimdeblauwe:htmx-spring-boot-thymeleaf:3.5.1")
-    runtimeOnly("org.webjars:webjars-locator-core")
-    runtimeOnly("org.webjars.npm:htmx.org:2.0.2")
 }
 
 testing {
     suites {
         val test by getting(JvmTestSuite::class)
 
+        withType<JvmTestSuite> {
+            dependencies {
+                implementation(project(":shared"))
+                implementation(project(":wire"))
+                implementation(testFixtures(project(":shared")))
+                implementation(testFixtures(project(":wire")))
+            }
+        }
+
         register<JvmTestSuite>("integrationTest") {
             useJUnitJupiter()
             dependencies {
-                implementation(project())
-                implementation(testFixtures(project()))
                 compileOnly("org.springframework:spring-web")
                 compileOnly("org.springframework.data:spring-data-jpa")
                 compileOnly("jakarta.persistence:jakarta.persistence-api")
                 compileOnly("com.fasterxml.jackson.core:jackson-annotations")
                 runtimeOnly("org.liquibase:liquibase-core")
                 runtimeOnly("com.h2database:h2")
-                implementation("org.seleniumhq.selenium:htmlunit3-driver:4.23.0")
             }
 
             targets {

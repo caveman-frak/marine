@@ -55,6 +55,7 @@ dependencies {
     implementation("org.projectlombok:lombok-mapstruct-binding:0.2.0")
     annotationProcessor("org.mapstruct:mapstruct-processor:1.6.2")
     testFixturesImplementation("org.springframework.boot:spring-boot-starter-test")
+    testFixturesImplementation("org.springframework.boot:spring-boot-starter-json")
     testFixturesImplementation("org.instancio:instancio-junit:5.0.2")
     testFixturesImplementation("net.datafaker:datafaker:2.3.1")
     testFixturesImplementation("com.thedeanda:lorem:2.2")
@@ -67,6 +68,8 @@ testing {
         val applySpringTest = { suite: JvmTestSuite ->
             suite.dependencies {
                 implementation(platform(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES))
+                implementation(project())
+                implementation(testFixtures(project()))
                 implementation("org.springframework.boot:spring-boot-starter-test")
                 implementation("org.junit-pioneer:junit-pioneer:2.2.0")
                 implementation("org.awaitility:awaitility")
