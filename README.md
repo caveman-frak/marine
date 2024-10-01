@@ -9,7 +9,6 @@ Tracking vessels and predicting things about them.
 | Project                            | Description                                 |
 |------------------------------------|---------------------------------------------|
 | [Shared](./shared/README.md)       | Shared library                              |
-| [Test](./test/README.md)           | Test Library                                |
 | [Wire](./wire/README.md)           | Wire models (exposed by the API)            |
 | [Synthetic](./synthetic/README.md) | Various tools for generating synthetic data |
 | [Loader](./loader/README.md)       | Data Loader (from external sources)         |
