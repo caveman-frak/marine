@@ -30,6 +30,7 @@ spring-boot-test = { group = "org.springframework.boot", name = "spring-boot-sta
 spring-boot-web = { group = "org.springframework.boot", name = "spring-boot-starter-web" }
 spring-web = { group = "org.springframework", name = "spring-web" }
 spring-boot-actuator = { group = "org.springframework.boot", name = "spring-boot-starter-actuator" }
+spring-shell = { group = "org.springframework.shell", name = "spring-shell-starter", version = "3.3.3" }
 
 spring-boot-devtools = { group = "org.springframework.boot", name = "spring-boot-devtools" }
 spring-data = { group = "org.springframework.data", name = "spring-data-commons" }
@@ -65,7 +66,6 @@ htmx-thymeleafe = { group = "io.github.wimdeblauwe", name = "htmx-spring-boot-th
 webjars-locator = { group = "org.webjars", name = "webjars-locator-core" }
 webjars-htmx = { group = "org.webjars.npm", name = "htmx.org", version = "2.0.2" }
 html-unit = { group = "org.seleniumhq.selenium", name = "htmlunit3-driver", version = "4.23.0" }
-spring-shell = { group = "org.springframework.shell", name = "spring-shell-starter", version = "3.3.3" }
 telemetry = { group = "io.opentelemetry.instrumentation", name = "opentelemetry-spring-boot-starter" }
 liquibase = { group = "org.liquibase", name = "liquibase-core" }
 database-h2 = { group = "com.h2database", name = "h2" }
@@ -88,6 +88,8 @@ spring-boot-starter = ["spring-boot-starter", "spring-boot-json", "spring-boot-v
 spring-boot-test = ["spring-boot-test", "spring-boot-json"]
 spring-boot-web = ["spring-boot-web", "spring-boot-actuator", "spring-boot-devtools"]
 web = ["spring-doc", "webjars-locator", "webjars-htmx", "spring-thymeleafe", "htmx-thymeleafe", "telemetry", "logback-encoder"]
+html = ["spring-thymeleafe", "htmx-thymeleafe"]
+html-rt = ["webjars-locator", "webjars-htmx"]
 spring-data = ["spring-boot-data", "spring-data", "spring-data-jpa", "jakarta-persistence", "hibernate"]
 data = ["liquibase", "database-h2"]
 jackson = ["jackson-annotations", "jackson-xml", "jackson-protobuf", "jackson-cbor"]

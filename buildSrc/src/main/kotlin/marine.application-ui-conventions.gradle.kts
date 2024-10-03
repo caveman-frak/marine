@@ -6,17 +6,15 @@ plugins {
 val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
-    implementation("io.github.wimdeblauwe:htmx-spring-boot-thymeleaf:3.5.1")
-    runtimeOnly("org.webjars:webjars-locator-core")
-    runtimeOnly("org.webjars.npm:htmx.org:2.0.2")
+    implementation(libs.findBundle("html").get())
+    runtimeOnly(libs.findBundle("html-rt").get())
 }
 
 testing {
     suites {
         val integrationTest by getting(JvmTestSuite::class) {
             dependencies {
-                implementation("org.seleniumhq.selenium:htmlunit3-driver:4.23.0")
+                implementation.add(libs.findLibrary("html-unit").get())
             }
         }
     }

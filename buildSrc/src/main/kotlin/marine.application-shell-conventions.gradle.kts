@@ -2,8 +2,10 @@ plugins {
     id("marine.application-conventions")
 }
 
+val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
+
 dependencies {
-    implementation("org.springframework.shell:spring-shell-starter:3.3.3")
+    implementation(libs.findLibrary("spring-shell").get())
 }
 
 testing {
