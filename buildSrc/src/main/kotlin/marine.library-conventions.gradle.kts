@@ -1,8 +1,10 @@
 plugins {
+    `java-library`
     id("marine.java-conventions")
-    id("java-library")
 }
 
+val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
+
 dependencies {
-    api("org.springframework.boot:spring-boot-starter-actuator")
+    api(libs.findLibrary("spring-boot-actuator").get())
 }

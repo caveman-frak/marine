@@ -3,28 +3,39 @@
 import de.undercouch.gradle.tasks.download.Download
 
 plugins {
+    application
     id("marine.java-conventions")
-    id("application")
     id("de.undercouch.download")
     id("com.gorylenko.gradle-git-properties")
 }
+
+val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
 
 dependencies {
     implementation(project(":shared"))
     implementation(project(":wire"))
     testFixturesImplementation(testFixtures(project(":shared")))
     testFixturesImplementation(testFixtures(project(":wire")))
-    implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    implementation("org.springframework.boot:spring-boot-starter-actuator")
-    implementation("org.springframework.boot:spring-boot-devtools")
-    implementation("io.opentelemetry.instrumentation:opentelemetry-spring-boot-starter")
-    runtimeOnly("org.liquibase:liquibase-core")
-    runtimeOnly("com.h2database:h2")
-    implementation("com.querydsl:querydsl-core:5.1.0")
-    implementation("com.querydsl:querydsl-jpa:5.1.0")
-    annotationProcessor("com.querydsl:querydsl-apt:5.1.0:jakarta")
-    annotationProcessor("jakarta.persistence:jakarta.persistence-api")
+
+//    implementation("org.springframework.boot:spring-boot-starter-web")
+//    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+//    implementation("org.springframework.boot:spring-boot-starter-actuator")
+//    implementation("org.springframework.boot:spring-boot-devtools")
+//    implementation("io.opentelemetry.instrumentation:opentelemetry-spring-boot-starter")
+//    implementation(libs.findBundle("spring-boot-starter").get())
+    implementation(libs.findBundle("spring-boot-web").get())
+    implementation(libs.findBundle("spring-data").get())
+    implementation(libs.findLibrary("telemetry").get())
+//    runtimeOnly("org.liquibase:liquibase-core")
+//    runtimeOnly("com.h2database:h2")
+    runtimeOnly(libs.findBundle("data").get())
+//    implementation("com.querydsl:querydsl-core:5.1.0")
+//    implementation("com.querydsl:querydsl-jpa:5.1.0")
+    implementation(libs.findBundle("querydsl").get())
+//    annotationProcessor("com.querydsl:querydsl-apt:5.1.0:jakarta")
+//    annotationProcessor("jakarta.persistence:jakarta.persistence-api")
+    annotationProcessor(variantOf(libs.findLibrary("querydsl-apt").get()) { classifier("jakarta") })
+    annotationProcessor(libs.findLibrary("jakarta-persistence").get())
 }
 
 testing {
@@ -43,12 +54,17 @@ testing {
         register<JvmTestSuite>("integrationTest") {
             useJUnitJupiter()
             dependencies {
-                compileOnly("org.springframework:spring-web")
-                compileOnly("org.springframework.data:spring-data-jpa")
-                compileOnly("jakarta.persistence:jakarta.persistence-api")
-                compileOnly("com.fasterxml.jackson.core:jackson-annotations")
-                runtimeOnly("org.liquibase:liquibase-core")
-                runtimeOnly("com.h2database:h2")
+//                compileOnly("org.springframework:spring-web")
+//                compileOnly("org.springframework.data:spring-data-jpa")
+//                compileOnly("jakarta.persistence:jakarta.persistence-api")
+//                compileOnly("com.fasterxml.jackson.core:jackson-annotations")
+//                runtimeOnly("org.liquibase:liquibase-core")
+//                runtimeOnly("com.h2database:h2")
+                compileOnly.add(libs.findLibrary("spring-web").get())
+                compileOnly.add(libs.findLibrary("spring-data-jpa").get())
+                compileOnly.add(libs.findLibrary("jakarta-persistence").get())
+                compileOnly.add(libs.findLibrary("jackson-annotations").get())
+                runtimeOnly.bundle(libs.findBundle("data").get())
             }
 
             targets {

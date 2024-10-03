@@ -12,9 +12,9 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-gradle-plugin:3.3.4")
-    implementation("io.freefair.gradle:lombok-plugin:8.10")
-    implementation("de.undercouch:gradle-download-task:5.6.0")
-    implementation("com.adarshr:gradle-test-logger-plugin:4.0.0")
-    implementation("com.gorylenko.gradle-git-properties:gradle-git-properties:2.4.2")
+    implementation(libs.spring.boot)
+    implementation(libs.lombok)
+    implementation(libs.download)
+    implementation(libs.test.logger)
+    implementation(libs.git.properties)
 }

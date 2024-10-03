@@ -3,6 +3,8 @@ plugins {
     id("marine.tailwind-build")
 }
 
+val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
+
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
     implementation("io.github.wimdeblauwe:htmx-spring-boot-thymeleaf:3.5.1")
