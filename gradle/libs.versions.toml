@@ -78,9 +78,13 @@ uom-assetyj = { group = "tech.uom.lib", name = "uom-lib-assertj", version.ref = 
 figlet = { group = "com.github.dtmo.jfiglet", name = "jfiglet", version = "1.0.1" }
 hll = { group = "net.agkn", name = "hll", version = "1.6.0" }
 guava = { group = "com.google.guava", name = "guava", version = "33.3.1-jre" }
-spatialj4 = { group = "org.locationtech.spatial4j", name = "spatial4j", version = "0.8" }
+spatial4j = { group = "org.locationtech.spatial4j", name = "spatial4j", version = "0.8" }
 jts = { group = "org.locationtech.jts", name = "jts-core", version = "1.20.0" }
 uber-h3 = { group = "com.uber", name = "h3", version = "4.1.1" }
+beanio = { group = "com.github.beanio", name = "beanio", version = "3.1.0" }
+enav = { group = "dk.dma.enav", name = "enav-serialization", version = "0.6" }
+ais-utils = { group = "dk.dma.ais.lib", name = "ais-lib-utils", version = "2.8.4" }
+jcommander = { group = "org.jcommander", name = "jcommander", version = "1.83" }
 
 [bundles]
 groovy = ["groovy-core", "groovy-json", "groovy-nio"]
@@ -96,7 +100,7 @@ jackson = ["jackson-annotations", "jackson-xml", "jackson-protobuf", "jackson-cb
 querydsl = ["querydsl", "querydsl-jpa"]
 uom = ["uom-units", "uom-jackson"]
 mapstruct = ["mapstruct", "mapstruct-bindings"]
-spatial = ["spatialj4", "jts", "uber-h3", "hll", "guava"]
+spatial = ["spatial4j", "jts", "uber-h3", "hll", "guava"]
 fake-data = ["lorem", "datafaker", "instancio"]
 testing = ["pioneer", "awaitility", "model-assert", "json-assertj", "xmlunit-assertj", "jimfs", "system-lambda", "jqwik"]
 
