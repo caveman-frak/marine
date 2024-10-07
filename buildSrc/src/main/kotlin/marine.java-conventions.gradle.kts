@@ -54,7 +54,6 @@ dependencies {
     testFixturesImplementation(libs.findBundle("spring-boot-test").get())
     testFixturesImplementation(libs.findBundle("fake-data").get())
     implementation(libs.findLibrary("spotbugs").get())
-    testImplementation(libs.findLibrary("slf4j-test").get())
 }
 
 testing {
@@ -83,7 +82,6 @@ tasks.withType<AbstractCopyTask> {
 }
 
 tasks.withType<Test>().configureEach {
-    exclude("ch.qos.logback", "logback-classic")
     if (!project.hasProperty("createReports")) {
         reports.html.required = false
         reports.junitXml.required = false
