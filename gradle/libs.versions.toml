@@ -1,13 +1,16 @@
 [versions]
-groovy = "3.0.21"
-spring-boot = "3.3.4"
-lombok = "8.10"
+groovy = "4.0.24"
+spring-boot = "3.4.0"
+lombok = "8.11"
 download = "5.6.0"
 test-logger = "4.0.0"
 git-properties = "2.4.2"
-mapstruct = "1.6.2"
+mapstruct = "1.6.3"
 uom = "2.1"
 querydsl = "5.1.0"
+open-telemetry = "2.10.0"
+spring-doc = "2.7.0"
+spring-shell = "3.4.0"
 
 [libraries]
 groovy-core = { group = "org.codehaus.groovy", name = "groovy", version.ref = "groovy" }
@@ -20,7 +23,7 @@ test-logger = { group = "com.adarshr", name = "gradle-test-logger-plugin", versi
 git-properties = { group = "com.gorylenko.gradle-git-properties", name = "gradle-git-properties", version.ref = "git-properties" }
 download = { group = "de.undercouch", name = "gradle-download-task", version.ref = "download" }
 # library dependencies
-spring-doc = { group = "org.springdoc", name = "springdoc-openapi-starter-webmvc-ui", version = "2.6.0" }
+spring-doc = { group = "org.springdoc", name = "springdoc-openapi-starter-webmvc-ui", version.ref = "spring-doc" }
 spring-boot-starter = { group = "org.springframework.boot", name = "spring-boot-starter" }
 spring-boot-json = { group = "org.springframework.boot", name = "spring-boot-starter-json" }
 spring-boot-data = { group = "org.springframework.boot", name = "spring-boot-starter-data-jpa" }
@@ -30,13 +33,13 @@ spring-boot-test = { group = "org.springframework.boot", name = "spring-boot-sta
 spring-boot-web = { group = "org.springframework.boot", name = "spring-boot-starter-web" }
 spring-web = { group = "org.springframework", name = "spring-web" }
 spring-boot-actuator = { group = "org.springframework.boot", name = "spring-boot-starter-actuator" }
-spring-shell = { group = "org.springframework.shell", name = "spring-shell-starter", version = "3.3.3" }
+spring-shell = { group = "org.springframework.shell", name = "spring-shell-starter", version.ref = "spring-shell" }
 
 spring-boot-devtools = { group = "org.springframework.boot", name = "spring-boot-devtools" }
 spring-data = { group = "org.springframework.data", name = "spring-data-commons" }
 spring-data-jpa = { group = "org.springframework.data", name = "spring-data-jpa" }
 
-telemetry-bom = { group = "io.opentelemetry.instrumentation", name = "opentelemetry-instrumentation-bom", version = "2.8.0" }
+telemetry-bom = { group = "io.opentelemetry.instrumentation", name = "opentelemetry-instrumentation-bom", version.ref = "open-telemetry" }
 hibernate = { group = "org.hibernate.orm", name = "hibernate-core" }
 jakarta-persistence = { group = "jakarta.persistence", name = "jakarta.persistence-api" }
 jackson-annotations = { group = "com.fasterxml.jackson.core", name = "jackson-annotations" }
@@ -48,8 +51,8 @@ commons-text = { group = "org.apache.commons", name = "commons-text", version = 
 mapstruct = { group = "org.mapstruct", name = "mapstruct", version.ref = "mapstruct" }
 mapstruct-bindings = { group = "org.projectlombok", name = "lombok-mapstruct-binding", version = "0.2.0" }
 mapstruct-apt = { group = "org.mapstruct", name = "mapstruct-processor", version.ref = "mapstruct" }
-instancio = { group = "org.instancio", name = "instancio-junit", version = "5.0.2" }
-datafaker = { group = "net.datafaker", name = "datafaker", version = "2.3.1" }
+instancio = { group = "org.instancio", name = "instancio-junit", version = "5.2.1" }
+datafaker = { group = "net.datafaker", name = "datafaker", version = "2.4.2" }
 lorem = { group = "com.thedeanda", name = "lorem", version = "2.2" }
 spotbugs = { group = "com.github.spotbugs", name = "spotbugs-annotations", version = "4.8.6" }
 slf4j-test = { group = "com.github.valfirst", name = "slf4j-test", version = "3.0.1" }
@@ -81,7 +84,7 @@ guava = { group = "com.google.guava", name = "guava", version = "33.3.1-jre" }
 spatial4j = { group = "org.locationtech.spatial4j", name = "spatial4j", version = "0.8" }
 jts = { group = "org.locationtech.jts", name = "jts-core", version = "1.20.0" }
 uber-h3 = { group = "com.uber", name = "h3", version = "4.1.1" }
-beanio = { group = "com.github.beanio", name = "beanio", version = "3.1.0" }
+beanio = { group = "com.github.beanio", name = "beanio", version = "3.2.0" }
 enav = { group = "dk.dma.enav", name = "enav-serialization", version = "0.6" }
 ais-utils = { group = "dk.dma.ais.lib", name = "ais-lib-utils", version = "2.8.4" }
 jcommander = { group = "org.jcommander", name = "jcommander", version = "1.83" }
