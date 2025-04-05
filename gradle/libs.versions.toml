@@ -1,15 +1,15 @@
 [versions]
-groovy = "4.0.24"
-spring-boot = "3.4.0"
-lombok = "8.11"
+groovy = "4.0.26"
+spring-boot = "3.4.4"
+lombok = "8.13"
 download = "5.6.0"
 test-logger = "4.0.0"
-git-properties = "2.4.2"
+git-properties = "2.5.0"
 mapstruct = "1.6.3"
 uom = "2.1"
 querydsl = "5.1.0"
-open-telemetry = "2.10.0"
-spring-doc = "2.7.0"
+open-telemetry = "2.14.0"
+spring-doc = "2.8.6"
 spring-shell = "3.4.0"
 
 [libraries]
@@ -51,10 +51,10 @@ commons-text = { group = "org.apache.commons", name = "commons-text", version = 
 mapstruct = { group = "org.mapstruct", name = "mapstruct", version.ref = "mapstruct" }
 mapstruct-bindings = { group = "org.projectlombok", name = "lombok-mapstruct-binding", version = "0.2.0" }
 mapstruct-apt = { group = "org.mapstruct", name = "mapstruct-processor", version.ref = "mapstruct" }
-instancio = { group = "org.instancio", name = "instancio-junit", version = "5.2.1" }
+instancio = { group = "org.instancio", name = "instancio-junit", version = "5.4.1" }
 datafaker = { group = "net.datafaker", name = "datafaker", version = "2.4.2" }
 lorem = { group = "com.thedeanda", name = "lorem", version = "2.2" }
-spotbugs = { group = "com.github.spotbugs", name = "spotbugs-annotations", version = "4.8.6" }
+spotbugs = { group = "com.github.spotbugs", name = "spotbugs-annotations", version = "4.9.3" }
 slf4j-test = { group = "com.github.valfirst", name = "slf4j-test", version = "3.0.1" }
 pioneer = { group = "org.junit-pioneer", name = "junit-pioneer", version = "2.2.0" }
 awaitility = { group = "org.awaitility", name = "awaitility" }
@@ -63,12 +63,12 @@ json-assertj = { group = "net.javacrumbs.json-unit", name = "json-unit-assertj",
 xmlunit-assertj = { group = "org.xmlunit", name = "xmlunit-assertj3", version = "2.10.0" }
 jimfs = { group = "com.google.jimfs", name = "jimfs", version = "1.0" }
 system-lambda = { group = "com.github.stefanbirkner", name = "system-lambda", version = "1.2.1" }
-jqwik = { group = "net.jqwik", name = "jqwik", version = "1.9.0" }
+jqwik = { group = "net.jqwik", name = "jqwik", version = "1.9.2" }
 spring-thymeleafe = { group = "org.springframework.boot", name = "spring-boot-starter-thymeleaf" }
-htmx-thymeleafe = { group = "io.github.wimdeblauwe", name = "htmx-spring-boot-thymeleaf", version = "3.5.1" }
+htmx-thymeleafe = { group = "io.github.wimdeblauwe", name = "htmx-spring-boot-thymeleaf", version = "4.0.1" }
 webjars-locator = { group = "org.webjars", name = "webjars-locator-core" }
-webjars-htmx = { group = "org.webjars.npm", name = "htmx.org", version = "2.0.2" }
-html-unit = { group = "org.seleniumhq.selenium", name = "htmlunit3-driver", version = "4.23.0" }
+webjars-htmx = { group = "org.webjars.npm", name = "htmx.org", version = "2.0.4" }
+html-unit = { group = "org.seleniumhq.selenium", name = "htmlunit3-driver", version = "4.30.0" }
 telemetry = { group = "io.opentelemetry.instrumentation", name = "opentelemetry-spring-boot-starter" }
 liquibase = { group = "org.liquibase", name = "liquibase-core" }
 database-h2 = { group = "com.h2database", name = "h2" }
@@ -84,10 +84,10 @@ guava = { group = "com.google.guava", name = "guava", version = "33.3.1-jre" }
 spatial4j = { group = "org.locationtech.spatial4j", name = "spatial4j", version = "0.8" }
 jts = { group = "org.locationtech.jts", name = "jts-core", version = "1.20.0" }
 uber-h3 = { group = "com.uber", name = "h3", version = "4.1.1" }
-beanio = { group = "com.github.beanio", name = "beanio", version = "3.2.0" }
+beanio = { group = "com.github.beanio", name = "beanio", version = "3.2.1" }
 enav = { group = "dk.dma.enav", name = "enav-serialization", version = "0.6" }
 ais-utils = { group = "dk.dma.ais.lib", name = "ais-lib-utils", version = "2.8.4" }
-jcommander = { group = "org.jcommander", name = "jcommander", version = "1.83" }
+jcommander = { group = "org.jcommander", name = "jcommander", version = "2.0" }
 
 [bundles]
 groovy = ["groovy-core", "groovy-json", "groovy-nio"]
