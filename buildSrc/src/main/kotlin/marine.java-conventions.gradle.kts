@@ -18,11 +18,11 @@ description = "Marine Tracking System"
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(23))
-        vendor.set(JvmVendorSpec.ORACLE)
+        languageVersion.set(JavaLanguageVersion.of(24))
+        setOf(JvmVendorSpec.ADOPTOPENJDK, JvmVendorSpec.ADOPTIUM, JvmVendorSpec.ORACLE)
     }
-    sourceCompatibility = JavaVersion.VERSION_23
-    targetCompatibility = JavaVersion.VERSION_23
+    sourceCompatibility = JavaVersion.VERSION_24
+    targetCompatibility = JavaVersion.VERSION_24
 }
 
 repositories {
@@ -91,12 +91,12 @@ tasks.withType<Test>().configureEach {
 
 tasks.named<ProcessResources>("processResources") {
     filesMatching("*application*.yaml") {
-        expand(project.properties)
+        expand(properties)
     }
 }
 
 tasks.withType<JavaCompile>().configureEach {
-    options.compilerArgs.add("--enable-preview")
+    options.compilerArgs.addAll(setOf("--enable-preview"))
 }
 
 tasks.withType<JavaExec>().configureEach {

@@ -1,5 +1,6 @@
 import de.undercouch.gradle.tasks.download.Download
 import de.undercouch.gradle.tasks.download.Verify
+import org.gradle.nativeplatform.platform.internal.ArchitectureInternal
 import org.gradle.nativeplatform.platform.internal.DefaultNativePlatform
 import java.nio.file.Files
 import java.nio.file.Paths
@@ -32,13 +33,19 @@ class Tailwind {
 }
 
 var os: OperatingSystem = DefaultNativePlatform.getCurrentOperatingSystem()
+var arch: ArchitectureInternal = DefaultNativePlatform.getCurrentArchitecture()
 
 val tailwind = Tailwind().apply {
     version = "3.4.13"
 
     if (os.isMacOsX) {
-        binary = "tailwindcss-macos-x64"
-        checksum = "3c4423494d8204b37455cb77b1b85ef5c6c42413f58e1516a4bf7528531c067d"
+        if (arch.isArm64) {
+            binary = "tailwindcss-macos-arm64"
+            checksum = "327703a4646081906e11d116ff4e8e43076466c3d269282bbe612555b9fe0c58"
+        } else {
+            binary = "tailwindcss-macos-x64"
+            checksum = "3c4423494d8204b37455cb77b1b85ef5c6c42413f58e1516a4bf7528531c067d"
+        }
     }
     if (os.isLinux) {
         binary = "tailwindcss-linux-x64"

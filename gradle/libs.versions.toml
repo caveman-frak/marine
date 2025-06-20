@@ -1,21 +1,21 @@
 [versions]
-groovy = "4.0.26"
-spring-boot = "3.4.4"
-lombok = "8.13"
+groovy = "4.0.27"
+spring-boot = "3.5.0"
+lombok = "8.14"
 download = "5.6.0"
 test-logger = "4.0.0"
 git-properties = "2.5.0"
 mapstruct = "1.6.3"
 uom = "2.1"
 querydsl = "5.1.0"
-open-telemetry = "2.14.0"
-spring-doc = "2.8.6"
+open-telemetry = "2.16.0"
+spring-doc = "2.8.8"
 spring-shell = "3.4.0"
 
 [libraries]
-groovy-core = { group = "org.codehaus.groovy", name = "groovy", version.ref = "groovy" }
-groovy-json = { group = "org.codehaus.groovy", name = "groovy-json", version.ref = "groovy" }
-groovy-nio = { group = "org.codehaus.groovy", name = "groovy-nio", version.ref = "groovy" }
+groovy-core = { group = "org.apache.groovy", name = "groovy", version.ref = "groovy" }
+groovy-json = { group = "org.apache.groovy", name = "groovy-json", version.ref = "groovy" }
+groovy-nio = { group = "org.apache.groovy", name = "groovy-nio", version.ref = "groovy" }
 # plugin dependencies
 spring-boot = { group = "org.springframework.boot", name = "spring-boot-gradle-plugin", version.ref = "spring-boot" }
 lombok = { group = "io.freefair.gradle", name = "lombok-plugin", version.ref = "lombok" }
