@@ -1,16 +1,16 @@
 [versions]
-groovy = "4.0.27"
-spring-boot = "3.5.0"
-lombok = "8.14"
+groovy = "4.0.1"
+spring-boot = "3.5.6"
+lombok = "9.0.0"
 download = "5.6.0"
 test-logger = "4.0.0"
-git-properties = "2.5.0"
+git-properties = "2.5.2"
 mapstruct = "1.6.3"
 uom = "2.1"
 querydsl = "5.1.0"
-open-telemetry = "2.16.0"
-spring-doc = "2.8.8"
-spring-shell = "3.4.0"
+open-telemetry = "2.20.1"
+spring-doc = "2.8.13"
+spring-shell = "3.4.1"
 
 [libraries]
 groovy-core = { group = "org.apache.groovy", name = "groovy", version.ref = "groovy" }
@@ -46,29 +46,29 @@ jackson-annotations = { group = "com.fasterxml.jackson.core", name = "jackson-an
 jackson-xml = { group = "com.fasterxml.jackson.dataformat", name = "jackson-dataformat-xml" }
 jackson-protobuf = { group = "com.fasterxml.jackson.dataformat", name = "jackson-dataformat-protobuf" }
 jackson-cbor = { group = "com.fasterxml.jackson.dataformat", name = "jackson-dataformat-cbor" }
-logback-encoder = { group = "net.logstash.logback", name = "logstash-logback-encoder", version = "8.0" }
-commons-text = { group = "org.apache.commons", name = "commons-text", version = "1.12.0" }
+logback-encoder = { group = "net.logstash.logback", name = "logstash-logback-encoder", version = "8.1" }
+commons-text = { group = "org.apache.commons", name = "commons-text", version = "1.14.0" }
 mapstruct = { group = "org.mapstruct", name = "mapstruct", version.ref = "mapstruct" }
 mapstruct-bindings = { group = "org.projectlombok", name = "lombok-mapstruct-binding", version = "0.2.0" }
 mapstruct-apt = { group = "org.mapstruct", name = "mapstruct-processor", version.ref = "mapstruct" }
-instancio = { group = "org.instancio", name = "instancio-junit", version = "5.4.1" }
-datafaker = { group = "net.datafaker", name = "datafaker", version = "2.4.2" }
+instancio = { group = "org.instancio", name = "instancio-junit", version = "5.5.1" }
+datafaker = { group = "net.datafaker", name = "datafaker", version = "2.5.2" }
 lorem = { group = "com.thedeanda", name = "lorem", version = "2.2" }
-spotbugs = { group = "com.github.spotbugs", name = "spotbugs-annotations", version = "4.9.3" }
-slf4j-test = { group = "com.github.valfirst", name = "slf4j-test", version = "3.0.1" }
+spotbugs = { group = "com.github.spotbugs", name = "spotbugs-annotations", version = "4.9.6" }
+slf4j-test = { group = "com.github.valfirst", name = "slf4j-test", version = "3.0.3" }
 pioneer = { group = "org.junit-pioneer", name = "junit-pioneer", version = "2.2.0" }
 awaitility = { group = "org.awaitility", name = "awaitility" }
-model-assert = { group = "uk.org.webcompere", name = "model-assert", version = "1.0.3" }
-json-assertj = { group = "net.javacrumbs.json-unit", name = "json-unit-assertj", version = "3.2.7" }
-xmlunit-assertj = { group = "org.xmlunit", name = "xmlunit-assertj3", version = "2.10.0" }
+model-assert = { group = "uk.org.webcompere", name = "model-assert", version = "1.1.0" }
+json-assertj = { group = "net.javacrumbs.json-unit", name = "json-unit-assertj", version = "5.0.0" }
+xmlunit-assertj = { group = "org.xmlunit", name = "xmlunit-assertj3", version = "2.10.4" }
 jimfs = { group = "com.google.jimfs", name = "jimfs", version = "1.0" }
 system-lambda = { group = "com.github.stefanbirkner", name = "system-lambda", version = "1.2.1" }
-jqwik = { group = "net.jqwik", name = "jqwik", version = "1.9.2" }
+jqwik = { group = "net.jqwik", name = "jqwik", version = "1.9.3" }
 spring-thymeleafe = { group = "org.springframework.boot", name = "spring-boot-starter-thymeleaf" }
 htmx-thymeleafe = { group = "io.github.wimdeblauwe", name = "htmx-spring-boot-thymeleaf", version = "4.0.1" }
 webjars-locator = { group = "org.webjars", name = "webjars-locator-core" }
-webjars-htmx = { group = "org.webjars.npm", name = "htmx.org", version = "2.0.4" }
-html-unit = { group = "org.seleniumhq.selenium", name = "htmlunit3-driver", version = "4.30.0" }
+webjars-htmx = { group = "org.webjars.npm", name = "htmx.org", version = "2.0.7" }
+html-unit = { group = "org.seleniumhq.selenium", name = "htmlunit3-driver", version = "4.36.1" }
 telemetry = { group = "io.opentelemetry.instrumentation", name = "opentelemetry-spring-boot-starter" }
 liquibase = { group = "org.liquibase", name = "liquibase-core" }
 database-h2 = { group = "com.h2database", name = "h2" }
@@ -80,14 +80,14 @@ uom-jackson = { group = "tech.uom.lib", name = "uom-lib-jackson", version.ref = 
 uom-assetyj = { group = "tech.uom.lib", name = "uom-lib-assertj", version.ref = "uom" }
 figlet = { group = "com.github.dtmo.jfiglet", name = "jfiglet", version = "1.0.1" }
 hll = { group = "net.agkn", name = "hll", version = "1.6.0" }
-guava = { group = "com.google.guava", name = "guava", version = "33.3.1-jre" }
+guava = { group = "com.google.guava", name = "guava", version = "33.5.0-jre" }
 spatial4j = { group = "org.locationtech.spatial4j", name = "spatial4j", version = "0.8" }
 jts = { group = "org.locationtech.jts", name = "jts-core", version = "1.20.0" }
-uber-h3 = { group = "com.uber", name = "h3", version = "4.1.1" }
+uber-h3 = { group = "com.uber", name = "h3", version = "4.3.2" }
 beanio = { group = "com.github.beanio", name = "beanio", version = "3.2.1" }
 enav = { group = "dk.dma.enav", name = "enav-serialization", version = "0.6" }
-ais-utils = { group = "dk.dma.ais.lib", name = "ais-lib-utils", version = "2.8.4" }
-jcommander = { group = "org.jcommander", name = "jcommander", version = "2.0" }
+ais-utils = { group = "dk.dma.ais.lib", name = "ais-lib-utils", version = "2.8.5" }
+jcommander = { group = "org.jcommander", name = "jcommander", version = "3.0" }
 
 [bundles]
 groovy = ["groovy-core", "groovy-json", "groovy-nio"]
